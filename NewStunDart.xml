@@ -1,0 +1,46 @@
+<Override>
+  <Item name="" identifier="stungundart" category="Weapon" maxstacksize="8" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,stungunammo" Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="armcab" minamount="1" maxamount="10" spawnprobability="0.25" notcampaign="true"/>
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab" minamount="1" maxamount="3" spawnprobability="0.2"/>
+    <PreferredContainer primary="stungun" amount="2" spawnprobability="1"/>
+    <PreferredContainer secondary="secarmcab"/>
+    <Price baseprice="30">
+      <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="3"/>
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="6" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="6" />
+    </Price>
+    <Deconstruct time="5"/>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20" amount="2">
+      <RequiredSkill identifier="weapons" level="30" />
+      <Item identifier="steel" />
+      <Item tag="wire" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="766,576,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="183,221,72,18" depth="0.55" origin="0.5,0.5" />
+    <Body width="70" height="15" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect"/>
+    <!--Non-lethal projectile sticks to characters and stuns them for 5 seconds.-->
+    <Projectile characterusable="false" launchimpulse="20.0" sticktocharacters="true">
+      <Attack structuredamage="0" targetforce="2">
+        <Affliction identifier="lacerations" strength="1" />
+        <Affliction identifier="stun" strength="0.1" />
+        <Affliction identifier="progressivestun" strength="1" />
+        <Affliction identifier="pstunspeedcontroller" strength="20" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="This">
+        <Sound file="Content/Items/Weapons/TaserHit1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/TaserHit2.ogg" type="OnUse" range="3000" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure"/>
+        <Conditional hastag="eq door"/>
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+</Override>

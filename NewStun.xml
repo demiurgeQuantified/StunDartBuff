@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Afflictions>
+  <Affliction
+    name="ProgressiveStunSpeedController"
+    identifier="pstunspeedcontroller"
+    type="stun"
+    limbspecific="false"
+    indicatorlimb="Torso"
+    showiconthreshold="1000"
+    showinhealthscannerthreshold="1000"
+    karmachangeonapplied="-10"
+    maxstrength="100">
+    <!-- Increases the speed of progressive stun at higher levels -->
+    <Effect minstrength="0" maxstrength="20" strengthchange="-2" />
+    <Effect minstrength="20" maxstrength="30" strengthchange="-2">
+      <StatusEffect target="Character">
+        <Affliction identifier="progressivestun" strength="2.5" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="30" maxstrength="40" strengthchange="-2">
+      <StatusEffect target="Character">
+        <Affliction identifier="progressivestun" strength="5" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="30" maxstrength="40" strengthchange="-2">
+      <StatusEffect target="Character">
+        <Affliction identifier="progressivestun" strength="7.5" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="40" maxstrength="50" strengthchange="-2">
+      <StatusEffect target="Character">
+        <Affliction identifier="progressivestun" strength="10" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="50" maxstrength="60" strengthchange="-2">
+      <StatusEffect target="Character">
+        <Affliction identifier="progressivestun" strength="12.5" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="60" maxstrength="70" strengthchange="-2">
+      <StatusEffect target="Character">
+        <Affliction identifier="progressivestun" strength="15" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="70" maxstrength="80" strengthchange="-2">
+      <StatusEffect target="Character">
+        <Affliction identifier="progressivestun" strength="17.5" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="80" maxstrength="90" strengthchange="-2">
+      <StatusEffect target="Character">
+        <Affliction identifier="progressivestun" strength="20" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="90" maxstrength="99" strengthchange="-2">
+      <StatusEffect target="Character">
+        <Affliction identifier="progressivestun" strength="22.5" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="99" maxstrength="100">
+      <StatusEffect target="Character" setvalue="true">
+        <ReduceAffliction identifier="pstunspeedcontroller" amount="100" />
+        <Affliction identifier="progressivestun" strength="100" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="0,255,0,255" origin="0,0"/>
+  </Affliction>
+</Afflictions>
