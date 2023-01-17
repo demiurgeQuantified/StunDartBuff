@@ -27,8 +27,7 @@
       <Attack structuredamage="0" targetforce="2">
         <Affliction identifier="lacerations" strength="1" />
         <Affliction identifier="stun" strength="0.1" />
-        <Affliction identifier="progressivestun" strength="1" />
-        <Affliction identifier="pstunspeedcontroller" strength="20" />
+        <Affliction identifier="pstun_speedcontroller" strength="20" />
       </Attack>
       <StatusEffect type="OnImpact" target="This">
         <Sound file="Content/Items/Weapons/TaserHit1.ogg" type="OnUse" range="3000" selectionmode="Random" />
