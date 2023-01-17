@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Afflictions>
   <Affliction
-    name="ProgressiveStun"
+    name="ProgressiveStunSpeedController"
     identifier="pstun_speedcontroller"
     type="stun"
     limbspecific="false"
@@ -13,52 +13,53 @@
     <!-- Increases the speed of progressive stun at higher levels, so that higher quality items will stun faster -->
     <Effect minstrength="0" maxstrength="20" strengthchange="0">
       <StatusEffect target="Character">
-        <Affliction identifier="pstun_speedvariable" strength="10" />
+        <Affliction identifier="pstun_speedvariable" strength="7.5" />
+        <!-- why is 7.5 in this script the same as 10 in vanilla? who knows! -->
       </StatusEffect>
     </Effect>
     <Effect minstrength="20" maxstrength="30" strengthchange="-2">
       <StatusEffect target="Character">
-        <Affliction identifier="pstun_speedvariable" strength="12.5" />
+        <Affliction identifier="pstun_speedvariable" strength="10" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="30" maxstrength="40" strengthchange="-2">
       <StatusEffect target="Character">
-        <Affliction identifier="pstun_speedvariable" strength="15" />
+        <Affliction identifier="pstun_speedvariable" strength="11" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="30" maxstrength="40" strengthchange="-2">
       <StatusEffect target="Character">
-        <Affliction identifier="pstun_speedvariable" strength="17.5" />
+        <Affliction identifier="pstun_speedvariable" strength="12" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="40" maxstrength="50" strengthchange="-2">
       <StatusEffect target="Character">
-        <Affliction identifier="pstun_speedvariable" strength="20" />
+        <Affliction identifier="pstun_speedvariable" strength="13" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="50" maxstrength="60" strengthchange="-2">
       <StatusEffect target="Character">
-        <Affliction identifier="pstun_speedvariable" strength="22.5" />
+        <Affliction identifier="pstun_speedvariable" strength="14" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="60" maxstrength="70" strengthchange="-2">
       <StatusEffect target="Character">
-        <Affliction identifier="pstun_speedvariable" strength="25" />
+        <Affliction identifier="pstun_speedvariable" strength="15" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="70" maxstrength="80" strengthchange="-2">
       <StatusEffect target="Character">
-        <Affliction identifier="pstun_speedvariable" strength="27.5" />
+        <Affliction identifier="pstun_speedvariable" strength="16" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="80" maxstrength="90" strengthchange="-2">
       <StatusEffect target="Character">
-        <Affliction identifier="pstun_speedvariable" strength="30" />
+        <Affliction identifier="pstun_speedvariable" strength="17" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="90" maxstrength="99" strengthchange="-2">
       <StatusEffect target="Character">
-        <Affliction identifier="pstun_speedvariable" strength="32.5" />
+        <Affliction identifier="pstun_speedvariable" strength="18" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="99" maxstrength="100">
@@ -70,7 +71,7 @@
   </Affliction>
 
   <Affliction
-    name="ProgressiveStun"
+    name="ProgressiveStunSpeedVariable"
     identifier="pstun_speedvariable"
     type="stun"
     limbspecific="false"
@@ -81,7 +82,6 @@
     maxstrength="100">
     <!-- A copy of ProgressiveStun that doesn't increase itself, so the controller can instead: not overriding incase other mods use it -->
     <Effect minstrength="0" maxstrength="99"
-      strengthchange = "0"
       minscreendistort="0.0"
       maxscreendistort="0.6"
       minscreenblur="0"
@@ -92,7 +92,6 @@
       maxspeedmultiplier="0.3">
     </Effect>
     <Effect minstrength="99" maxstrength="100"
-      strengthchange = "0"
       minscreendistort="0.6"
       maxscreendistort="1"
       minscreenblur="1"
