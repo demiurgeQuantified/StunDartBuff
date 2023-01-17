@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Stun Dart Buff" modversion="1.0.0" corepackage="False" gameversion="0.20.16.1">
+<contentpackage name="Albion's Stun Dart Buff" modversion="1.0.0" corepackage="False" gameversion="0.20.16.1">
     <Afflictions file="%ModDir%/NewStun.xml" />
     <Item file="%ModDir%/NewStunDart.xml" />
 </contentpackage>
